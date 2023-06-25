@@ -135,12 +135,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     if (_formKey.currentState != null &&
                         _formKey.currentState!.validate()) {
-                      // controller.loginButtonPressed(
-                      //   emailTFC.text,
-                      //   int.parse(passwordTFC.text),
-                      // );
-                      // Get.to(HomeScreen());
-                      Get.to(() => const HomeScreen());
+                      controller.loginButtonPressed(
+                        emailTFC.text,
+                        int.parse(passwordTFC.text),
+                      );
+                      //  Get.to(() => const HomeScreen());
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
