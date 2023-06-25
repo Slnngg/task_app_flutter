@@ -9,7 +9,6 @@ class loginController extends GetxController {
 
   void loginButtonPressed(String email, int password) async {
     // ignore: avoid_print
-    print('aa');
     var result = await Repository().loginUser(email, password);
     // ignore: unrelated_type_equality_checks
     if (result.success == 1) {
@@ -17,7 +16,7 @@ class loginController extends GetxController {
       Get.snackbar("Амжилттай", "${result.message}");
       login.value = result;
     } else {
-      Get.snackbar("Амжилтгүй", "${result.message}");
+      Get.snackbar("Амжилтгүй", "${result.err}");
     }
   }
 }
